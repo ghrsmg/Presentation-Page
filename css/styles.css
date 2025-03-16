@@ -1,0 +1,270 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+nav {
+    background: #333;
+    padding: 10px 0;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, background 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #ff5733;
+    background: rgba(255, 87, 51, 0.2);
+    font-weight: bold;
+}
+
+/* Main Content Container */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Profile Picture */
+.profile-pic {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ff5733;
+    object-fit: cover;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* Section Headings */
+h2 {
+    color: #333;
+    text-align: center;
+    font-size: 26px;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Work & Education Section */
+#work-education {
+    padding: 20px;
+    opacity: 1; /* Ensure it's visible */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Work Experience Cards */
+.card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Work Experience Scroll Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Work Experience Scroll Effect */
+.card {
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+/* Hobbies Section */
+#hobbies {
+    padding: 20px;
+    opacity: 1; /* Ensure visibility */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Hobbies List */
+.hobbies-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.hobbies-list li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    background: #ffcc80;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hobbies-list li:hover {
+    transform: scale(1.1);
+    background: #ff9800;
+    color: white;
+}
+
+/* Custom bullet points */
+.hobbies-list li::before {
+    content: "•";
+    color: #333;
+    font-size: 20px;
+}
+
+/* Tech Stack Grid */
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    opacity: 1;
+    transform: scale(0.9);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.tech-card {
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 120px;
+    opacity: 1;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.tech-card:hover {
+    transform: scale(1.1);
+}
+
+.tech-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 12px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hobbies-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .tech-card {
+        text-align: center;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        width: 120px;
+    }
+    
+    .tech-card:hover {
+        transform: scale(1.1);
+    }
+    
+    .tech-card img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+}
