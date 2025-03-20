@@ -1,4 +1,4 @@
-import { data } from "./data.js";  // Use named import
+import { data } from "./data.js";  
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript Loaded!");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const hobbiesSection = document.getElementById("hobbies");
     const techStackSection = document.querySelector(".tech-grid");
 
-    // Load Personal Info (index.html)
+    // Load Personal Info 
     if (personalSection) {
         console.log("Loading Personal Info...");
         const { name, dateOfBirth, education, location } = data.personal;
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
     }
 
-    // Load Work & Education (about.html)
+    // Load Work & Education 
     if (workEducationSection) {
         console.log("Loading Work & Education...");
         let experienceHTML = "<h2>Work Experience</h2>";
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         workEducationSection.innerHTML = experienceHTML;
     }
 
-    // Load Hobbies (hobbies.html)
+    // Load Hobbies 
     if (hobbiesSection) {
         console.log("Loading Hobbies...");
         hobbiesSection.innerHTML = `
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
     }
 
-    // Load Tech Stack (tech.html)
+    // Load Tech Stack 
     if (techStackSection) {
         console.log("Loading Tech Stack...");
 
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        console.log("Tech Stack Data:", data.techStack);
+
 
         // Populate Tech Stack
         techStackSection.innerHTML = data.techStack.map(tech => {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="tech-card">
                     <img src="${imgSrc}" alt="${tech.name}" 
                          onerror="this.onerror=null; this.src='assets/logos/default_logo.png'; console.error('Missing image:', '${imgSrc}')">
-                    <p>${tech.name}</p>
+                    
                 </div>
             `;
         }).join("");
