@@ -53,26 +53,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (techStackSection) {
         console.log("Loading Tech Stack...");
 
-        // Ensure techStack data is available
-        if (!data.techStack || !Array.isArray(data.techStack) || data.techStack.length === 0) {
-            console.error("Tech stack data is missing or empty.");
-            return;
-        }
-
-
-
-        // Populate Tech Stack
-        techStackSection.innerHTML = data.techStack.map(tech => {
-            const imgSrc = tech.logo ? tech.logo : "assets/logos/default_logo.png";
-
-            return `
-                <div class="tech-card">
-                    <img src="${imgSrc}" alt="${tech.name}" 
-                         onerror="this.onerror=null; this.src='assets/logos/default_logo.png'; console.error('Missing image:', '${imgSrc}')">
-                    
+        techStackSection.innerHTML = data.techStack.map(tech => `
+            <div class="tech-card">
+                <div class="tech-card-inner">
+                    <div class="tech-card-front">
+                        <img src="${tech.logo}" alt="${tech.name}" 
+                             onerror="this.src='assets/logos/default_logo.png'">
+                    </div>
+                    <div class="tech-card-back">
+                        <p>${tech.name}</p>
+                    </div>
                 </div>
-            `;
-        }).join("");
+            </div>
+        `).join("");
     } else {
         console.error("Tech Stack section not found in DOM.");
     }
